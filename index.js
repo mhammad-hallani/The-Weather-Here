@@ -10,7 +10,9 @@ const { time } = require('console');
 const { request, response } = require('express');
 
 const app = express();
-app.listen(3000, ()=>console.log('listening at 3000'));
+
+const port= process.env.PORT || 3000;
+app.listen(port, ()=>console.log(`listening at ${port}`));
 app.use(express.static('public'));
 app.use(express.json({limit: '1mb'}));
 
